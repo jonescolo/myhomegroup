@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bible Study Selector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bible Study Selector</h1>
+
+    <label for="bookSelect">Select a Book:</label>
+    <select id="bookSelect">
+      <option value="">-- Choose a Book --</option>
+    </select>
+
+    <label for="chapterSelect">Select a Chapter:</label>
+    <select id="chapterSelect" disabled>
+      <option value="">-- Choose a Chapter --</option>
+    </select>
+
+    <div class="actions">
+      <button id="downloadBtn" disabled>Download</button>
+      <button id="emailBtn" disabled>Email</button>
+    </div>
+  </div>
+
+  <!-- Modal for email input -->
+  <div id="emailModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Email Bible Study</h2>
+      <input type="email" id="emailInput" placeholder="Enter your email" />
+      <button id="sendEmailBtn">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
