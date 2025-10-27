@@ -111,12 +111,14 @@ chapterSelect.addEventListener("change", () => {
   emailBtn.disabled = !valid;
 });
 
-// Download file
+
 downloadBtn.addEventListener("click", () => {
-  const book = bookSelect.value.replace(/\s/g, "_");
+  const book = bookSelect.value;
   const chapter = chapterSelect.value;
-  const filename = `${book}_${chapter}.docx`;
-  window.location.href = `/Bible_studies/${filename}`;
+  const rawFilename = `${book}_${chapter}.docx`;
+  const encodedFilename = encodeURIComponent(rawFilename);
+
+  window.location.href = `Bible_studies/${encodedFilename}`;
 });
 
 // Show email modal
