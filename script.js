@@ -113,13 +113,15 @@ chapterSelect.addEventListener("change", () => {
 
 
 downloadBtn.addEventListener("click", () => {
-  const book = bookSelect.value;
+  const book = bookSelect.value.replace(/\s/g, "_");
   const chapter = chapterSelect.value;
   const rawFilename = `${book}_${chapter}.docx`;
   const encodedFilename = encodeURIComponent(rawFilename);
 
   window.location.href = `Bible_studies/${encodedFilename}`;
 });
+
+
 
 // Show email modal
 emailBtn.addEventListener("click", () => {
